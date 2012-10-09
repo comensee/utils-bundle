@@ -1,3 +1,3 @@
-Bundle gathering utilites classes : 
+Bundle gathering utilities classes : 
  - Url
  - String (coming soon)
