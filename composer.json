@@ -1,0 +1,14 @@
+{
+    "name": "comensee/UtilsBundle",
+    "description": "Bundle gathering some utilities classes",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Alain Bangoula",
+            "email": "alain@come-n-see.fr"
+        }
+    ],
+    "require": {
+
+    }
+}
