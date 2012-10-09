@@ -10,5 +10,6 @@
     ],
     "require": {
 
-    }
+    },
+    "target-dir": "CNSEE/UtilsBundle",
 }
