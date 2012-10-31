@@ -29,60 +29,13 @@ class String{
 	return $link;
 	}
 
-	public function stripAccents($string){
-		$string = str_replace('Ã ', 'a', $string);
-		$string = str_replace('Ã¡', 'a', $string);
-		$string = str_replace('Ã¢', 'a', $string);
-		$string = str_replace('Ã£', 'a', $string);
-		$string = str_replace('Ã¤', 'a', $string);
-		$string = str_replace('Ã§', 'c', $string);
-		$string = str_replace('Ã¨', 'e', $string);
-		$string = str_replace('Ã©', 'e', $string);
-		$string = str_replace('Ãª', 'e', $string);
-		$string = str_replace('Ã«', 'e', $string);
-		$string = str_replace('Ã¬', 'i', $string);
-		$string = str_replace('Ã­', 'i', $string);
-		$string = str_replace('Ã®', 'i', $string);
-		$string = str_replace('Ã¯', 'i', $string);
-		$string = str_replace('Ã±', 'n', $string);
-		$string = str_replace('Ã²', 'o', $string);
-		$string = str_replace('Ã³', 'o', $string);
-		$string = str_replace('Ã´', 'o', $string);
-		$string = str_replace('Ãµ', 'o', $string);
-		$string = str_replace('Ã¶', 'o', $string);
-		$string = str_replace('Ã¹', 'u', $string);
-		$string = str_replace('Ãº', 'u', $string);
-		$string = str_replace('Ã»', 'u', $string);
-		$string = str_replace('Ã¼', 'u', $string);
-		$string = str_replace('Ã½', 'y', $string);
-		$string = str_replace('Ã¿', 'y', $string);
-		$string = str_replace('Ã€', 'A', $string);
-$string = str_replace('Ã', 'A', $string);
-$string = str_replace('Ã‚', 'A', $string);
-$string = str_replace('Ãƒ', 'A', $string);
-$string = str_replace('Ã„', 'A', $string);
-$string = str_replace('Ã‡', 'C', $string);
-$string = str_replace('Ãˆ', 'E', $string);
-$string = str_replace('Ã‰', 'E', $string);
-$string = str_replace('ÃŠ', 'E', $string);
-$string = str_replace('Ã‹', 'E', $string);
-$string = str_replace('ÃŒ', 'I', $string);
-$string = str_replace('Ã', 'I', $string);
-$string = str_replace('ÃŽ', 'I', $string);
-$string = str_replace('Ã', 'I', $string);
-$string = str_replace('Ã‘', 'N', $string);
-$string = str_replace('Ã’', 'O', $string);
-$string = str_replace('Ã“', 'O', $string);
-$string = str_replace('Ã”', 'O', $string);
-$string = str_replace('Ã•', 'O', $string);
-$string = str_replace('Ã–', 'O', $string);
-$string = str_replace('Ã™', 'U', $string);
-$string = str_replace('Ãš', 'U', $string);
-$string = str_replace('Ã›', 'U', $string);
-$string = str_replace('Ãœ', 'U', $string);
-$string = str_replace('Ã', 'Y', $string);
+	public function stripAccents($str){
+		$str = htmlentities($str, ENT_NOQUOTES, 'utf-8');
+		$str = preg_replace('#\&([A-za-z])(?:uml|circ|tilde|acute|grave|cedil|ring)\;#', '\1', $str);
+		$str = preg_replace('#\&([A-za-z]{2})(?:lig)\;#', '\1', $str);
+		$str = preg_replace('#\&[^;]+\;#', '', $str);
 
-		return $string;
+		return $str;
 	}
 	
 	public function stripspecialChars($string){
