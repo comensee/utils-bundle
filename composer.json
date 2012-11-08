@@ -13,6 +13,6 @@
     },
     "target-dir": "CNSEE/UtilsBundle",
 "autoload": {
-        "psr-0": { "Nelmio\\ApiDocBundle": "" }
+        "psr-0": { "CNSEE\\UtilsBundle": "" }
     }
 }
