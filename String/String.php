@@ -10,7 +10,7 @@ namespace CNSEE\UtilsBundle\String;
 class String{
 
 
-	public function prepareLink($string){
+	static public function prepareLink($string){
 	
 		$link = str_replace(' ', '-', $string);
 		$link = self::stripAccents($link);
@@ -18,7 +18,7 @@ class String{
 		return $link;
 	}
 	
-	public function getaLink($string){
+	static public function getaLink($string){
 		$link = strtolower($string);
 		$link = str_replace(' ', '-', $link);
                 $link = str_replace('---', '-', $link);
@@ -29,7 +29,7 @@ class String{
 	return $link;
 	}
 
-	public function stripAccents($str){
+	static public function stripAccents($str){
 		$str = htmlentities($str, ENT_NOQUOTES, 'utf-8');
 		$str = preg_replace('#\&([A-za-z])(?:uml|circ|tilde|acute|grave|cedil|ring)\;#', '\1', $str);
 		$str = preg_replace('#\&([A-za-z]{2})(?:lig)\;#', '\1', $str);
@@ -38,7 +38,7 @@ class String{
 		return $str;
 	}
 	
-	public function stripspecialChars($string){
+	static public function stripspecialChars($string){
 		$string = str_replace(',', '', $string);
 		//$string = str_replace('.', '', $string);
 		$string = str_replace(':', '', $string);
@@ -65,7 +65,7 @@ class String{
 		return $string;
 	}
 	
-	public function getPassword($count = 8){
+	static public function getPassword($count = 8){
 
 	$abc= array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
  	$pass = '';
@@ -75,14 +75,14 @@ class String{
 	return $pass;
 	}
 	
-	public function stripSpace($data){
+	static public function stripSpace($data){
 			$data = utf8_encode($data);
 	
 			$data = str_replace(" ", "_", $data);
 			return $data;
 	}
 	
-	public function cutChars($texte, $number){
+	static public function cutChars($texte, $number){
         if(strlen($texte) > $number){
             $texte = substr($texte, 0, $number).'...';
 	}
@@ -90,7 +90,7 @@ class String{
 	return $texte;
 	}
 
-        public function getChars($texte, $base, $number){
+        static public function getChars($texte, $base, $number){
 	if(strlen($texte) > $number){
             if($base <= 1):
                 $texte = substr($texte, 0 , $number).'...';
@@ -102,17 +102,17 @@ class String{
 	return $texte;
 	}
 
-        public function GenerateKey(){
+        static public function GenerateKey(){
             return md5(rand(uniqid()));
         }
 	
-	function twit($texte){
+	static function twit($texte){
 
 	$texte = str_replace(" ", "+", $texte);
 	return $texte;
 	}
 	
-        function br2nl($text){
+        static function br2nl($text){
             return preg_replace("/\<br\s*\/?\>/i", "\r\r", $text);
         }
 
