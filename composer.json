@@ -12,7 +12,7 @@
 
     },
     "target-dir": "CNSEE/UtilsBundle",
-"autoload": {
+    "autoload": {
         "psr-0": { "CNSEE\\UtilsBundle": "" }
     }
 }
