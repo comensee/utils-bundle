@@ -10,7 +10,11 @@ namespace CNSEE\UtilsBundle\Url;
 class Url {
     
     protected $link_url = null;
-	protected $this->ch;
+    /**
+     * @todo: Syntax error
+     * protected $this->ch;
+     */
+    protected $ch;
     
 
     public function __construct($link_url){
